@@ -63,9 +63,10 @@
 				
 				out.print("<tr>");
 				out.print("<td>"+b_no+"</td>");
-				out.print("<td>"+b_title+"</td>");
+				out.print("<td><a href='./read_content_page.jsp?b_no="+b_no+"'>"+b_title+"</a></td>");
 				out.print("<td>"+m_nick+"</td>");
 				out.print("</tr>");
+				out.println();
 			}    	
 	    	
 	    	

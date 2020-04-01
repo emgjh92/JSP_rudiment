@@ -25,7 +25,6 @@
 		
 		out.println("내용 : " + content + ", 작성일 : "+ date);
 		out.println("<br>");
-		
 	}
 
 %>
