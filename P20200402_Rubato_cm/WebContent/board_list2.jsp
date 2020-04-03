@@ -38,19 +38,6 @@
 <aside>
   <article id="login_box">
     <%
-    /*
-    CREATE TABLE RB_Board(
-        rbb_no NUMBER(8),
-        rbm_no NUMBER(8),
-        rbb_title VARCHAR2(400),
-        rbb_content VARCHAR2(1000),
-        rbb_writedate DATE,
-        rbb_hit NUMBER(8),
-        rbb_up NUMBER(8),
-        rbb_down NUMBER(8)
-    );
-    */
-    
 			//비회원인 경우
 			String sessionNick = (String)session.getAttribute("sessionNick");
 			if(sessionNick == null){
@@ -168,9 +155,9 @@ Statement stm2 = conn2.createStatement();// 실행 객체- 실행 관련 처리
       </tr>
       <% 
       
-      String sql0 = "select * from rb_Board, rb_member WHERE rb_board.rbm_no=rb_member.rbm_no ORDER BY rb_Board.rbb_no DESC";
+      String search = request.getParameter("search");
 
-     
+      String sql0 = "SELECT * FROM RB_Board,RB_MEMBER WHERE rbb_title LIKE '%"+search+"%' and rb_board.rbm_no=rb_member.rbm_no ORDER BY rb_Board.rbb_no DESC";	     
       //================DB 연동 (SELECT)==================
 
       // Test Code - 개발자를 위해 log를 찍는 용도

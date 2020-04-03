@@ -6,13 +6,11 @@
     
     <%
     	request.setCharacterEncoding("utf-8");
-    	String title = request.getParameter("rbb_title");
-    	String content = request.getParameter("rbb_content");
+    	//String c_no = request.getParameter("rbm_no");
+    	String content = request.getParameter("rbc_content");
     	String member_no = (String)session.getAttribute("sessionNo");	
-    	String hit = request.getParameter("rbb_hit");
-    	//INSERT INTO FB_Board VALUES(FB_Board_seq.nextval,1,'제목입니다','내용입니다',SYSDATE);
-    	// 1 이 %d 가 아닌 %s 인 이유는 1은 어디까지나 "DB 기준으로만" 숫자 이기 때문!
-    	String sql = String.format("INSERT INTO RB_Board VALUES(RB_Board_seq.nextval,%s,'%s','%s',SYSDATE,%s,0,0)",member_no,title,content,0);	
+		String rbb_no = request.getParameter("hidden_no");
+    	String sql = String.format("INSERT INTO RB_COMMENT VALUES(RB_COMMENT_seq.nextval,%s,%s,'%s',SYSDATE)",member_no,rbb_no,content);	
     	
     	// Test Code - 개발자를 위해 log를 찍는 용도
     	System.out.println("실행될 쿼리: "+sql);
@@ -31,5 +29,6 @@
     	stm.close();
     	conn.close();
     	
-    	response.sendRedirect("./board_list.jsp");
-    %>
+    	response.sendRedirect("./board_view.jsp?rbb_no="+rbb_no);
+	
+    	%>
