@@ -27,3 +27,8 @@ ja05@lea-pi:/var/lib/tomcat8/webapps $
 (war 파일은 옮기면 자동으로 압축이 해재된다)
 
 
+
+=================MEMO=================
+2020-04-06
+Book & Source Code : 
+https://github.com/madvirus/jsp23
