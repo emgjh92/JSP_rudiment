@@ -27,8 +27,11 @@ public class MainPageHandler implements CommandHandler {
 			
 		}
 		
-		request.setAttribute("contentList", contentList);
+		//request.getSession().setAttribute("contentList", contentList);
+		//메모리에 세션이 소멸하지 않고 계속 유지가 된버린다. ==> 메모리 효율에 문제가 생긴다.
 		
+		request.setAttribute("contentList", contentList);
+
 		return "/WEB-INF/view/main_page.jsp";
 	}
 	//************************************************************************

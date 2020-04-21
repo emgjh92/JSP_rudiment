@@ -23,7 +23,9 @@ public class LoginProcessHandler implements CommandHandler {
 		if(memberVo!=null) {
 			//로그인 성공 ==> 세션에 값을 넣어준 후 main page로 redirect 시켜준다
 			request.getSession().setAttribute("sessionUserInfo", memberVo);
+			
 			return "redirect:./main_page.do";
+			//return "/WEB-INF/view/main_page.jsp"; ==> 하면 안되는 방식
 		}
 		else {
 			//로그인 실패
