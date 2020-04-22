@@ -48,13 +48,14 @@ public class ControllerUsingURI extends HttpServlet {
 		
 		
 		CommandHandler handler = commandFactory.getCommandHandler(command);
+		//다형성에 의해 적합한 handler 가 들어가게 됨
 		
 		String view = null;
 		
 		if(handler != null) {
 			view = handler.process(request, response);
 		}else {
-			System.out.println("[경고]명령어에 매핑된 객체가 없습니다");
+			System.out.println("[경고]명령어에 매핑된 객체가 없습니다"); //handler에 맵핑된 객체가 null 인 경우
 		}
 		
 		if(view != null) {
@@ -68,9 +69,10 @@ public class ControllerUsingURI extends HttpServlet {
 			}
 			else {
 				RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-				dispatcher.forward(request, response);
+				dispatcher.forward(request, response); //request 객체는 이 시점까지도 살아 있다.
 				
 				//forwarding 의 경우
+				
 			}
 			
 		}
