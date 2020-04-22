@@ -32,7 +32,6 @@ public class BoardDao {
 			rs = pstm.executeQuery(); //query 실행
 			
 			//로직.....
-			
 			while(rs.next()) {
 				int b_no = rs.getInt("b_no");
 				int m_no = rs.getInt("m_no");
