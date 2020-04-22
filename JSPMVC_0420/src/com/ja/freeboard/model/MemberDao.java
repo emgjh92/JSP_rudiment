@@ -14,7 +14,7 @@ public class MemberDao {
 	
 	
 	public void insert(String m_id, String m_pw, String m_nick, String m_phone) {
-		
+		//회원 가입 기능
 		String query="INSERT INTO FB_MEMBER VALUES(fb_memebr_seq.nextval,?,?,?,?,SYSDATE)";
 		
 		Connection conn = null;
@@ -63,7 +63,7 @@ public class MemberDao {
 	//************************20200421 코드 추가********************************
 	
 	public MemberVo selectByIdAndPw(String id, String pw) {
-		
+		//회원 조회 기능 (회원인지 아닌지 확인)
 		MemberVo memberVo = null;
 		
 		String query = "SELECT * FROM fb_member WHERE m_id=? AND m_pw=?";
@@ -133,7 +133,7 @@ public class MemberDao {
 
 	}
 	
-	public MemberVo selectByNo(int no) {
+	public MemberVo selectByNo(int no) { //맴버 넘버로 회원 조회
 		MemberVo memberVo = null;
 		
 		String query = "SELECT * FROM fb_member WHERE m_no=?";

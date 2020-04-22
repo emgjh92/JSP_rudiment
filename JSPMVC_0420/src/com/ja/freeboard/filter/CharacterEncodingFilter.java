@@ -20,6 +20,7 @@ public class CharacterEncodingFilter implements Filter {
      */
     public CharacterEncodingFilter() {
         // TODO Auto-generated constructor stub
+    	
     }
 
 	/**

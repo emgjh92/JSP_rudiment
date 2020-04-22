@@ -28,7 +28,7 @@
 	<c:forEach items="${contentList}" var="data">
 		<tr>
 		<td>${data.boardVo.b_no}</td>
-		<td>${data.boardVo.b_title}</td>
+		<td><a href="./read_content_page.do?b_no=${data.boardVo.b_no}">${data.boardVo.b_title}</a></td>
 		<td>${data.memberVo.m_nick}</td>
 		<td>${data.boardVo.b_writedate}</td>
 		</tr>
