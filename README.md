@@ -26,7 +26,7 @@ ja05@lea-pi:/var/lib/tomcat8/webapps $
 
 (war 파일은 옮기면 자동으로 압축이 해재된다)
 
-======================================================================================================================
+===========================================================
 
 
 =================MEMO=================
@@ -35,4 +35,30 @@ ja05@lea-pi:/var/lib/tomcat8/webapps $
 Book & Source Code : 
 https://github.com/madvirus/jsp23
 
-======================================================================================================================
+===========================================================
+
+=================MEMO==================
+서버 마지막 설정
+2020-04-23
+
+프로젝트의 web.xml 에서
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>JSPMVC_0420</display-name>
+  <welcome-file-list>
+    <welcome-file>main_page.do</welcome-file>
+  </welcome-file-list>
+  
+  웰컴 페이지 설정
+  
+  
+  
+156        <Context docBase="JSPMVC_0420" path="/" reloadable="true" source="org.eclipse.jst.jee.server:JSPMVC_0420"/></Host>
+==> path를 위와 같이 수정해 준다.
+  서버의 server.xml 설정
+  
+  
+  서버 설정에서 HTTP 1.1 의 Portnumber를 80으로 설정
+  
+  ===========================================================
+
