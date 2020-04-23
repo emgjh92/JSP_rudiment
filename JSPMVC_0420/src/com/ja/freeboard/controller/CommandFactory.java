@@ -19,10 +19,12 @@ public class CommandFactory {
 		commandMap.put("/logout_process.do", new LogoutProcessHandler());
 		commandMap.put("/write_content_page.do", new WriteContentPageHandler());
 		commandMap.put("/write_content_process.do", new WriteContentProcessHandler());
-		commandMap.put("/read_content_page.do", new ReadContentPageHandler());
+		commandMap.put("/board_view.do", new ReadContentPageHandler());
 		commandMap.put("/delete_content_process.do", new DeleteContentProcessHandler());
 		commandMap.put("/update_content_page.do", new UpdateContentPageHandler());
 		commandMap.put("/update_content_process.do", new UpdateContentProcessHandler());
+		
+		commandMap.put("/", new MainPageHandler()); //20200423 코드추가 : 웰컴 페이지(main_page.do) 설정
 	}
 	
 	
