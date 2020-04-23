@@ -2,8 +2,6 @@ package com.ja.freeboard.controller;
 
 import com.ja.freeboard.controller.command.*;
 
-import delete_content_process.UpdateContentPageHandler;
-
 import java.util.*;
 
 public class CommandFactory {
