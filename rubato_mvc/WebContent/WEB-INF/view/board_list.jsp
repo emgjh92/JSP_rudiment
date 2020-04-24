@@ -77,12 +77,13 @@
     <img src="img/comm.gif">
     <h2 id="board_title">자유 게시판 </h2>
     <div id="total_search">
-      <div id="total">▷ 총 5개의 게시물이 있습니다.</div>
+      <div id="total">▷ 총 ${count}개의 게시물이 있습니다.</div>
       <div id="search">
+      
         <div id="select_img"><img src="img/select_search.gif"></div>
         <div id="search_select">
-          <select>
-            <option>제목</option>
+        	<select>
+        <option>제목</option>
             <option>내용</option>
             <option>글쓴이</option>
           </select> 
@@ -105,13 +106,15 @@
 		<td><a href="./board_view.do?b_no=${data.boardVo.b_no}">${data.boardVo.b_title}</a></td>
 		<td>${data.memberVo.m_nick}</td>
 		<td>${data.boardVo.b_writedate}</td>
-		<td></td>
+		<td>${data.boardVo.b_read_count}</td>
 		</tr>
 </c:forEach>
     </table>	
    
     <div id="buttons">
-      <div class="col1">◀ 이전 1 다음 ▶</div>
+      <div class="col1">◀ 이전  <c:forEach begin="1" end="${count/10}" varStatus="abcd">
+	<a href="./board_list.do?paging=${abcd.index}">${abcd.index}</a>
+</c:forEach>다음  ▶</div>
       <div class="col2">
         <img src="img/list.png"> 
 <c:choose>

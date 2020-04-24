@@ -23,7 +23,10 @@ private HashMap<String,CommandHandler> commandMap;
 		commandMap.put("/delete_content_process.do", new DeleteContentProcessHandler());
 		commandMap.put("/write_content_process.do", new WriteContentProcessHandler());
 		commandMap.put("/board_write.do", new WriteContentPageHandler());
-		//commandMap.put("/board_update_process.do", new UpdateContentProcessHandler());
+		commandMap.put("/update_read_count_process.do", new UpdateCountProcessHandler()); //조회수 플러스
+		commandMap.put("/board_modify_process.do", new UpdateContentProcessHandler());
+		commandMap.put("/board_modify_page.do", new UpdateContentPageHandler());
+		//commandMap.put("/pagingProcess.do",new MainPageHandler());
 	}
 	
 	

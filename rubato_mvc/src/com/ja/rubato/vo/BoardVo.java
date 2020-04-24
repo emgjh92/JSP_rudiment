@@ -10,21 +10,21 @@ public class BoardVo {
 	private String b_title;
 	private String b_content;
 	private Date b_writedate;
-	//private int b_read_count;
+	private int b_read_count;
 
 	
 	public BoardVo() {
 		super();
 	}
 
-	public BoardVo(int b_no, int m_no, String b_title, String b_content, Date b_writedate) {
+	public BoardVo(int b_no, int m_no, String b_title, String b_content, Date b_writedate, int b_read_count) {
 		super();
 		this.b_no = b_no;
 		this.m_no = m_no;
 		this.b_title = b_title;
 		this.b_content = b_content;
 		this.b_writedate = b_writedate;
-		//this.b_read_count = b_read_count;
+		this.b_read_count = b_read_count;
 
 	}
 
@@ -77,7 +77,7 @@ public class BoardVo {
 	public void setB_writedate(Date b_writedate) {
 		this.b_writedate = b_writedate;
 	}
-	/*
+	
 	public int getB_read_count() {
 		return b_read_count;
 	}
@@ -85,6 +85,6 @@ public class BoardVo {
 
 	public void setB_read_count(int b_read_count) {
 		this.b_read_count = b_read_count;
-	}*/
+	}
 	//*****************************************************************************
 }

@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="stylesheet" type="text/css" href="css/footer.css">
 <link rel="stylesheet" type="text/css" href="css/board_left.css">
-<link rel="stylesheet" type="text/css" href="css/board_view_main.css">
+<link rel="stylesheet" type="text/css" href="css/board_write_main.css">
 </head>
 <body>
 <div id="wrap">
@@ -56,6 +56,7 @@
 	 </form>
 	</c:otherwise>
 </c:choose>
+
   <nav id="sub_menu">
     <ul>
       <li><a href="board_list.do">+ 자유 게시판</a></li>
@@ -76,35 +77,36 @@
 <section id="main">
   <img src="img/comm.gif">
   <h2 id="board_title">자유 게시판 </h2>
-  <div id="view_title_box">   
-    <span>${contentDataVo.boardVo.b_title }</span>
-    <span id="info">${contentDataVo.memberVo.m_nick } | 조회 : ${contentDataVo.boardVo.b_read_count } | ${contentDataVo.boardVo.b_writedate }</span>
-  </div>	
-  <p id="view_content">
-   ${contentDataVo.boardVo.b_content }
-  </p>		
-  <div id="comment_box">
-    <img id="title_comment" src="img/title_comment.gif">
-    <textarea></textarea>
-    <img id="ok_ripple" src="img/ok_ripple.gif">
-  </div>
-  <div id="buttons">
+  <div id="write_title"><h2>글쓰기</h2></div>
+  <form action="./board_modify_process.do" method="post">
+  <table>
+    <tr id="name">
+      <td class="col1">이름</td>
+      <td class="col2">${sessionUserInfo.m_nick}</td>
+    </tr>
+    <tr id="subject"> 
+      <td class="col1">제목</td>
+      <td class="col2">
+      <input type="hidden" name="b_no" value="${contentDataVo.boardVo.b_no }">
+      <input type="text" name="b_title" value="${contentDataVo.boardVo.b_title }"></td>
+    </tr>		
+    <tr id="content">
+      <td class="col1">내용</td>
+      <td class="col2"><textarea name="b_content">${contentDataVo.boardVo.b_content }</textarea></td>
+    </tr>	
+    <tr id="upload">
+      <td class="col1">업로드 파일</td>
+      <td class="col2"><input type="text"> <input type="file"></td>
+    </tr>	
+  </table>
 
-<c:if test="${!empty sessionUserInfo && sessionUserInfo.m_no == contentDataVo.memberVo.m_no}">
-	<a href="./delete_content_process.do?b_no=${contentDataVo.boardVo.b_no}">
-	<img src="img/delete.png"></a>
-	<a href="./board_modify_page.do?b_no=${contentDataVo.boardVo.b_no}">
-	<img src="img/modify.png"></a>
-</c:if><a href="board_list.do"><input type="image" src="img/list.png"></a>  
-<c:choose>
-	<c:when test="${!empty sessionUserInfo }"> <!-- 로그인 했는지 안했는지 세션을 통해 확인 -->
-        <a href="board_write.do"><img src="img/write.png"></a>
-</c:when>
-<c:otherwise>
-       <img src="img/write.png">
-</c:otherwise></c:choose>
+  <div id="buttons">
+    <input type="image" src="img/ok.png">
+    <a href="./board_list.do"><img src="img/list.png"></a>
   </div>
+   </form>
 </section> <!-- section main -->
+ 
 <div class="clear"></div>
 <footer>
   <img id="footer_logo" src="img/footer_logo.gif">
@@ -119,6 +121,7 @@
     <li><img src="img/twitter.gif"></li>
   </ul>
 </footer> <!-- footer -->
+
 </div> <!-- wrap -->
 </body>
 </html>
