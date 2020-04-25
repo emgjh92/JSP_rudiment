@@ -83,7 +83,7 @@
         <div id="select_img"><img src="img/select_search.gif"></div>
         <div id="search_select">
         	<select>
-        <option>제목</option>
+        	<option>제목</option>
             <option>내용</option>
             <option>글쓴이</option>
           </select> 

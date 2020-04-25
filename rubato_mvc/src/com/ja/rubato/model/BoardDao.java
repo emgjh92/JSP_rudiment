@@ -248,7 +248,7 @@ public class BoardDao {
 				String b_content = rs.getString("b_content");
 				java.util.Date b_writedate = rs.getDate("b_writedate");
 				int b_read_count = rs.getInt("b_read_count");
-;				boardVo = new BoardVo(b_no,m_no,b_title,b_content,b_writedate,b_read_count);
+				boardVo = new BoardVo(b_no,m_no,b_title,b_content,b_writedate,b_read_count);
 			}
 			
 		} catch (Exception e) {
@@ -453,4 +453,6 @@ public class BoardDao {
 		
 		return list;
 	}
+	
+	
 }

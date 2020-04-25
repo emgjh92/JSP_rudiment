@@ -27,6 +27,8 @@ private HashMap<String,CommandHandler> commandMap;
 		commandMap.put("/board_modify_process.do", new UpdateContentProcessHandler());
 		commandMap.put("/board_modify_page.do", new UpdateContentPageHandler());
 		//commandMap.put("/pagingProcess.do",new MainPageHandler());
+		//pagingProcess.do 를 /board_list.do(MainPageHandler) 하나로 일괄 처리 하게 합침
+		
 	}
 	
 	
